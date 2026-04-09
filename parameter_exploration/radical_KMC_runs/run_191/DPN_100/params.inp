@@ -1,0 +1,20 @@
+// General simulation parameters (1503)
+T = 149			// temperature, deg C
+total_chains = 1e+06			// number of initial chains to simulate
+repeat_unit_mass = 51			// molar mass of repeat unit (g/mol) - also the molar mass of the polymer
+end_group_mass = 15.04          // molar mass of one end group (g/mol)
+density = 0.069			// density of the polymer (g/mL or g/cm3)
+Mn = 5136			// number-average molecular weight (g/mol)
+Mw = 7704			// weight-average molecular weight (g/mol)
+time = 60
+
+// Kinetic parameters for all reactions
+// Units: A [1/s or L/mol/s] and Ea [kcal/mol]
+A_I = 1E16
+Ea_I = 37.4
+
+A_D = 8.8E+13
+Ea_D = 23.5
+
+A_T = 1E9
+Ea_T = 0

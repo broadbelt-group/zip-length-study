@@ -116,19 +116,19 @@ def process_data_eci(data):
     # Calculate ratios and concentrations
     df["Rp/Rt KMC"] = (data['kDKMC']*df['# Radical Chains BS'])/(data['kTKMC']*df['# Radical Chains RR']*df['# Radical Chains RR'])
     # df["Rp/Ri KMC"] = (data['kDKMC']*df['# Radical Chains BS'])/(data['kIKMC']*df['# Bonds'])
+    df["Mn/Mn0 (DP)"] = df['Mn (g/mol)']/data['m0']
     
     df["Radical Conc BS"] = (df['# Radical Chains BS'])/data['kmc_vol']/Na
     df["Radical Conc RR"] = (df['# Radical Chains RR'])/data['kmc_vol']/Na
     # df["Bond Conc"] = (df['# Bonds'])/data['kmc_vol']/Na
     
     df['d0(t) (g/L)'] = df['Mn (g/mol)']*data['num_chains']/data['kmc_vol']/Na
-    df["Radical Conc [Eq 10b] Mod"] = np.sqrt(df['d0(t) (g/L)']*data['kI']/data['kT']/data['m0'])
-    df["Radical Conc [Eq 10b] As-Is"] = np.sqrt(2*df['d0(t) (g/L)']*data['kI']/data['kT']/data['m0'])
+    df["Radical Conc [Eq 10b] Mod"] = np.sqrt(df['d0(t) (g/L)'].iloc[0]*data['kI']/data['kT']/data['m0']/df["Mn/Mn0 (DP)"])
+    df["Radical Conc [Eq 10b] Mod d(t)"] = np.sqrt(df['d0(t) (g/L)']*data['kI']/data['kT']/data['m0']/df["Mn/Mn0 (DP)"])
+
     
-    df["Mn/Mn0 (DP)"] = df['Mn (g/mol)']/data['m0']
-    
-    df["Corrected ZL"] = data['kD']*np.sqrt(data['m0']/(data['kT']*data['kI']*df['d0(t) (g/L)']))
-    # df["Corrected ZL"] = data['kD']*np.sqrt(data['m0']/(data['kT']*data['kI']*df['d0(t) (g/L)'].iloc[0]))       # took out time-based ZL
+    # for ECI, use varying x but constant density
+    df["Corrected ZL"] = data['kD']*np.sqrt(data['m0']*df["Mn/Mn0 (DP)"]/(data['kT']*data['kI']*df['d0(t) (g/L)'].iloc[0]))
             
     kD = data['kD']
     kT = data['kT']
