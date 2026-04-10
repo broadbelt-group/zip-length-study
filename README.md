@@ -4,19 +4,15 @@
 
 This repository contains computational models for understanding zip length of depolymerization through a mechanistic modeling lens. The work compares two computational approaches to analytical expressions:
 
-1. **Kinetic Monte Carlo (KMC)** — Stochastic discrete-event simulations of individual polymer chains
-2. **Method of Moments (MoM)** — Moment-based ODE system for molecular weight distribution dynamics  
-3. **Boyd (1959)** — 
+1. **Kinetic Monte Carlo (KMC)**
+2. **Method of Moments (MoM)**
+3. **Boyd (1959)**
 
 ## Publication
 
 **Title:** Understanding polymer zip length through the lens of mechanistic modeling
 
-**Journal:** [To be completed]
-
 **DOI:** [To be completed]
-
-**Manuscript:** [Link to preprint or published version]
 
 ## Contents
 
@@ -48,6 +44,7 @@ This repository contains computational models for understanding zip length of de
 
 ### `parameter_exploration/` — Parameter Space Analysis
 
+- **`radical_KMC_runs/`** — Output directory for Scheme 2 radicals
 - **CSV files** results across DPn and dispersity ranges
 - **`rs_methods_all_dpn_og_v*.csv`** — Comprehensive parameter search results for Scheme 1
 - **`eci_summary_with_plots.csv`** — Comprehensive parameter search results for Scheme 2
