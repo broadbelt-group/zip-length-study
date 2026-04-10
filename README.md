@@ -45,7 +45,6 @@ This repository contains computational models for understanding zip length of de
 ### `parameter_exploration/` — Parameter Space Analysis
 
 - **`radical_KMC_runs/`** — Output directory for Scheme 2 radicals
-- **CSV files** results across DPn and dispersity ranges
 - **`rs_methods_all_dpn_og_v*.csv`** — Comprehensive parameter search results for Scheme 1
 - **`eci_summary_with_plots.csv`** — Comprehensive parameter search results for Scheme 2
 
@@ -59,17 +58,13 @@ This repository contains computational models for understanding zip length of de
 
 ### For KMC Simulations (C++ Compilation)
 
-**Compiler:** g++ with C++17 support  
+**Compiler:** g++ with C++17
 
 **Compile:**
 ```bash
 cd cpp_file_src
 make
 ```
-
-### Hardware
-- Analysis notebook: ~5 minutes on modern laptop
-- KMC simulation: 4+ GB RAM, 1 core recommended
 
 ## Usage
 
@@ -97,12 +92,11 @@ Run cells sequentially to generate:
    ```bash
    mkdir -p run_custom && cd run_custom
    cp ../params.inp ../program .
-   ./program > simulation.log
+   ./program
    ```
    Generates: `time_based_data.csv`, `zip_length.csv`, `chain_weights_*.csv`
 
 4. **Analyze** with `plot_helpers.read_data()` in your script
-
 
 ## Data
 
@@ -113,24 +107,24 @@ Run cells sequentially to generate:
   - `zip_length.csv` — Detected backbiting events: zip length, occurrence time
   - `chain_weights_*pct_conversion.csv` — Molecular weight snapshots at conversion milestones
   
-- **Parameter Exploration** — Summary CSV files with computed ratio metrics across parameter space
+- **Parameter Exploration** — Summary CSV files with computed metrics across parameter space
 
 ### Large Data / Excluded Files
 
 Extended simulation data (all DPn, all dispersities) available upon request. Contact authors for:
-- Full `spedup_cpp_files/T_260/` tree outputs
+- Full `spedup_cpp_files/T_260/` outputs
 - ECI parameter sweep raw data
-- Method of Moments integration results
+- All Method of Moments results
 
 ## License
 
-MIT License — See LICENSE file for details
+MIT License
 
 ## Authors & Contact
 
-**Author(s):** Shivani Kozarekar, Dachey Lin (PI: Linda Broadbelt)
-**Affiliation:** Northwestern University, Department of Chemical and Biological Engineering
-**Contact:** shivanikozarekar2026@u.northwestern.edu
+- **Author(s):** Shivani Kozarekar, Dachey Lin (PI: Linda Broadbelt)
+- **Affiliation:** Northwestern University, Department of Chemical and Biological Engineering
+- **Contact:** shivanikozarekar2026@u.northwestern.edu
 
 ## Citation
 
