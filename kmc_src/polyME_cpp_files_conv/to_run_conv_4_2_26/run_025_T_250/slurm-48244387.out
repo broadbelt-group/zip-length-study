@@ -1,0 +1,16 @@
+Resetting modules to system default. Reseting $MODULEPATH back to system default. All extra directories will be removed from $MODULEPATH.
+Total Mass: 1.21003e+11
+Boyd ZL0: 139.808
+kI: 4.88296e-06
+kD: 1551.61
+kT: 1e+09
+Conv: 0.1, Time (s): 152.909
+Conv: 0.2, Time (s): 315.068
+Conv: 0.3, Time (s): 488.202
+Conv: 0.4, Time (s): 675.223
+Conv: 0.5, Time (s): 880.157
+Conv: 0.6, Time (s): 1109.43
+Conv: 0.7, Time (s): 1375.41
+Conv: 0.8, Time (s): 1706.23
+Conv: 0.9, Time (s): 2200.71
+Simulation time: 6.3 min

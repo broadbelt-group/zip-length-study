@@ -90,7 +90,6 @@ def process_data(data):
     df["Mn/Mn0 (DP)"] = df['Mn (g/mol)']/data['m0']
     
     df["Corrected ZL"] = data['kD']*np.sqrt(data['m0']/(data['kT']*data['kI']*df['d0(t) (g/L)']))
-    # df["Corrected ZL"] = data['kD']*np.sqrt(data['m0']/(data['kT']*data['kI']*df['d0(t) (g/L)'].iloc[0]))       # took out time-based ZL
             
     kD = data['kD']
     kT = data['kT']
@@ -109,18 +108,13 @@ def process_data(data):
 def process_data_eci(data):
     df = data['all_data_df'].copy()
     Na = 6.02E23
-
-    # if "# Bonds" not in df.columns:
-    #     df['# Bonds'] = df['# Bonds a']
     
     # Calculate ratios and concentrations
     df["Rp/Rt KMC"] = (data['kDKMC']*df['# Radical Chains BS'])/(data['kTKMC']*df['# Radical Chains RR']*df['# Radical Chains RR'])
-    # df["Rp/Ri KMC"] = (data['kDKMC']*df['# Radical Chains BS'])/(data['kIKMC']*df['# Bonds'])
     df["Mn/Mn0 (DP)"] = df['Mn (g/mol)']/data['m0']
     
     df["Radical Conc BS"] = (df['# Radical Chains BS'])/data['kmc_vol']/Na
     df["Radical Conc RR"] = (df['# Radical Chains RR'])/data['kmc_vol']/Na
-    # df["Bond Conc"] = (df['# Bonds'])/data['kmc_vol']/Na
     
     df['d0(t) (g/L)'] = df['Mn (g/mol)']*data['num_chains']/data['kmc_vol']/Na
     df["Radical Conc [Eq 10b] Mod"] = np.sqrt(df['d0(t) (g/L)'].iloc[0]*data['kI']/data['kT']/data['m0']/df["Mn/Mn0 (DP)"])
@@ -135,12 +129,6 @@ def process_data_eci(data):
     kI = data['kI']
 
     df['2a'] = df['Rp/Rt KMC']
-    # df['2b'] = df['Rp/Ri KMC']
-    # df['5a BS'] = (kD*df['Radical Conc BS'])/(kT*df['Radical Conc RR']*df['Radical Conc RR'])
-    # df['5a BS'] = (kD*df['Radical Conc BS'])/(kT*df['Radical Conc RR']*df['Radical Conc RR'])
-    # df['5b BS'] = kD*df['Radical Conc BS'] / (kI*df['Bond Conc'])
-    # df['5a RR'] = (kD*df['Radical Conc RR'])/(kT*df['Radical Conc RR']*df['Radical Conc RR'])
-    # df['5b RR'] = kD*df['Radical Conc RR'] / (kI*df['Bond Conc'])
     
     return df
 
