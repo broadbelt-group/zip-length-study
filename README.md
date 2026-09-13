@@ -12,7 +12,7 @@ This repository contains computational models for understanding zip length of de
 
 **Title:** Understanding polymer zip length through the lens of mechanistic modeling
 
-**DOI:** [To be completed]
+**DOI:** https://doi.org/10.1021/acs.macromol.6c01473
 
 ## Contents
 
@@ -122,7 +122,7 @@ MIT License
 
 ## Authors & Contact
 
-- **Author(s):** Shivani Kozarekar, Dachey Lin (PI: Linda Broadbelt)
+- **Code Author(s):** Shivani Kozarekar, Dachey Lin (PI: Linda Broadbelt)
 - **Affiliation:** Northwestern University, Department of Chemical and Biological Engineering
 - **Contact:** shivanikozarekar2026@u.northwestern.edu
 
@@ -131,11 +131,11 @@ MIT License
 If you use this code or data, please cite:
 
 ```bibtex
-@article{[author_year],
-  title={Understanding polymer zip length through the lens of mechanistic modeling},
-  author={[Authors]},
-  journal={[Journal]},
-  year={[Year]},
-  doi={[DOI]}
+@article{10.1021/acs.macromol.6c01473,
+    author = {Kozarekar, Shivani S. and Lin, Dachey and Deshmukh, Gaurav and Hu, Qixuan and Ogunfowora, Lawal and Wu, Pengfei and Savoie, Brett and Dou, Letian and Gao, Hanyu and Broadbelt, Linda J.},
+    title = {Understanding Polymer Zip Length through the Lens of Mechanistic Modeling},
+    journal = {Macromolecules},
+    year = {2026},
+    month = {09},
 }
 ```
